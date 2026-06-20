@@ -200,3 +200,38 @@ Este Milestone se ocupa del último ciclo de vida de las obras subidas a Pandora
 - HU-09: Como usuario quiero visualizar mi colección.
 - HU-10: Como usuario quiero abrir paquetes de cartas.
 - HU-11: Como jugador quiero utilizar cartas en batallas.
+
+## Estimación de requerimientos
+
+Se utiliza estimación mediante Story Points (Fibonacci) considerando complejidad, esfuerzo técnico e incertidumbre.
+Sumando los puntos de historia asignados a cada HU, el mapa de esfuerzo queda distribuido de la siguiente manera:
+
+### Milestone 1: Plataforma base de usuarios y artistas
+- HU-01: Registro de usuario  3 SP
+- HU-02: Inicio de sesión 3 SP
+- HU-03: Perfil público de artista 5 SP
+- HU-07: Motor de conversión (Aislado con datos sintéticos)  13 SP
+- **Total Milestone 1: 24 SP**
+
+### Milestone 2: Sistema artístico y participación comunitaria
+
+- HU-04: Carga de obra y Lore  5 SP
+- HU-05: Explorador de galería  5 SP
+- HU-06: Evaluación con estrellas y emociones  8 SP
+- HU-12: Gestión y moderación del administrador  5 SP
+- **Total Milestone 2: 23 SP**
+
+### Milestone 3: Gamificación y coleccionismo
+
+- HU-08: Obtención de cartas generadas  5 SP
+- HU-09: Visualización de la colección (Álbum)  5 SP
+- HU-10: Apertura de paquetes  8 SP
+- HU-11: Módulo de batallas/TCG  13 SP
+- **Total Milestone 3: 31 SP**
+
+### Resumen
+
+**Gran total: 78 SP**
+
+Los componentes con mayor estimación son el motor de conversión y el módulo de juego porque contienen lógica de negocio propia, cálculos dinámicos e interacción entre múltiples entidades. La publicación y gestión básica poseen menor complejidad porque corresponden principalmente a operaciones CRUD.
+Suponiendo que se trabaje a una velocidad promedio de 10-12 SP por sprint, se estima que los primeros dos Milestones tardaran 2 sprints (alrededor  de 4 semanas), mientras que el último milestone (3) tardará 3 sprints (alrededor de 6 semanas)
