@@ -157,3 +157,46 @@ Kanban es una metodología ágil enfocada en la gestión visual del trabajo y la
 | RF-11.2          | Módulo de Juego       | El sistema debe procesar y resolver de manera automatizada los enfrentamientos (Battle/TCG) aplicando las estadísticas de las cartas.            | HU-11       | Lógica de Negocio | Web y Mobile     |
 | RF-12.1          | Administración        | El sistema debe contar con herramientas de moderación para dar de baja obras o comentarios que violen los términos de uso.| HU-12       | ABM               | Web (Backoffice) |
 | RF-12.2          | Seguridad             | El sistema debe incorporar mecanismos de protección perimetral y mitigación contra ataques automatizados de bots en las votaciones.| HU-12       | Lógica de Negocio | Backend |
+
+
+## Milestones del proyecto
+### Milestone 1: Plataforma base de usuarios y artistas
+
+Este Milestone establece la base sobre la cual funcionan las demás funcionalidades.
+
+**Objetivo**: Crear la estructura inicial del ecosistema.
+
+
+**Historias**:
+
+- HU-01: Como usuario quiero registrarme para crear una cuenta.
+- HU-02: Como usuario quiero iniciar sesión para acceder al sistema.
+- HU-03: Como artista quiero crear mi perfil público.
+- HU-07: Como sistema procesar valoraciones de la comunidad para generar atributos de cartas coleccionables.
+
+### Milestone 2: Sistema artístico y participación comunitaria
+
+Este milestone se enfoca en las funcionalidades principales que involucran compartir y manejar las obras de los usuarios, que es uno de los componentes críticos de Pandora.
+
+**Objetivo**: implementar el flujo de publicación y evaluación, y manejo de obras.
+
+**Historias**:
+
+- HU-04: Como artista quiero cargar una obra digital.
+- HU-05: Como usuario quiero explorar una galería.
+- HU-06: Como usuario quiero evaluar obras con estrellas y emociones.
+- HU-012: Como administrador quiero gestionar el contenido de la plataforma para mantener la calidad y seguridad del sistema
+
+
+### Milestone 3: Gamificación y coleccionismo
+
+Este Milestone se ocupa del último ciclo de vida de las obras subidas a Pandora, y su segundo componente más crítico que son los elementos de colección.
+
+**Objetivo**: transformar obras evaluadas en cartas jugables.
+
+**Historias**:
+
+- HU-08: Como usuario quiero obtener cartas generadas a partir de obras para ampliar mi colección.
+- HU-09: Como usuario quiero visualizar mi colección.
+- HU-10: Como usuario quiero abrir paquetes de cartas.
+- HU-11: Como jugador quiero utilizar cartas en batallas.
