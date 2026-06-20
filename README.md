@@ -45,3 +45,38 @@ El proyecto responde a una problemática identificada: las plataformas actuales 
 
 #### T (Time-bound / Temporal)
 Implementar un prototipo funcional durante el período académico del seminario, organizado mediante entregas incrementales utilizando metodología ágil.
+
+## Análisis de interesados y stakeholders
+Los interesados principales son aquellos actores que interactúan directa o indirectamente con la plataforma.
+
+### Stakeholder 1: Artistas digitales
+Los artistas representan uno de los pilares del sistema, ya que la propuesta busca que las obras dejen de ser contenido estático y tengan una función dentro del ecosistema del juego.
+
+- **Descripción**: Usuarios creadores de contenido que utilizan Pandora como medio de exposición y transformación de sus obras en cartas coleccionables.
+- **Necesidades**:
+    - Publicar obras.
+    - Obtener visibilidad.
+    - Recibir retroalimentación de la comunidad.
+    - Transformar sus creaciones en elementos jugables.
+- **Interés en el proyecto**: Alto.
+
+### Stakeholder 2: Usuarios jugadores / comunidad
+La comunidad tiene un rol activo porque sus valoraciones influyen directamente en la generación de estadísticas y características de las cartas.
+- **Descripción**: Usuarios que exploran obras, califican contenido y utilizan cartas dentro del sistema.
+- **Necesidades**:
+    - Descubrir contenido.
+    - Participar en la evolución de las obras.
+    - Coleccionar cartas.
+    - Jugar partidas.
+- **Interés en el proyecto**: Alto.
+
+### Stakeholder 3: Equipo de desarrollo / administradores
+El proyecto requiere integración de múltiples tecnologías, manejo de imágenes, autenticación y protección contra comportamientos abusivos como bots.
+
+- **Descripción**: Responsables de construir, mantener y administrar la plataforma.
+- **Necesidades**:
+    - Arquitectura mantenible.
+    - Seguridad.
+    - Control del contenido.
+    - Escalabilidad.
+- **Interés en el proyecto**: Alto.
