@@ -114,7 +114,7 @@ Kanban es una metodología ágil enfocada en la gestión visual del trabajo y la
 - **Transparencia**: todos los integrantes pueden visualizar el estado actual del proyecto.
 
 
-## Historias de Usuario y Requermientos Funcionales
+## Historias de Usuario y Requerimientos Funcionales
 
 # Historias de Usuario
 
@@ -151,12 +151,21 @@ Kanban es una metodología ágil enfocada en la gestión visual del trabajo y la
 | RF-08.1          | Generación de Activos | El sistema debe emitir e instanciar la carta coleccionable con una identidad mecánica única vinculada a la obra de origen.                       | HU-08       | Lógica de Negocio | Backend          |
 | RF-09.1          | Álbum Digital         | El sistema debe listar y renderizar visualmente todas las cartas obtenidas y poseídas por el usuario autenticado.                                | HU-09       | Reporte           | Web y Mobile     |
 | RF-09.2          | Álbum Digital         | El sistema debe permitir filtrar, ordenar y organizar el inventario de la colección personal del usuario.                                        | HU-09       | ABM / Reporte     | Web y Mobile     |
-| RF-10.1          | Sistema de Gacha      | El sistema debe implementar un mecanismo de apertura de paquetes de cartas con lógica de asignación aleatoria basada en la rareza comunitaria.   | HU-10       | Lógica de Negocio | Web y Mobile     |
-| RF-10.2          | Sistema de Gacha      | El sistema debe gestionar una rutina de reposición periódica y gratuita de paquetes para incentivar la progresión del jugador.                   | HU-10       | Lógica de Negocio | Backend          |
+| RF-10.1          | Sistema de paquetes aleatorios de cartas      | El sistema debe implementar un mecanismo de apertura de paquetes de cartas con lógica de asignación aleatoria basada en la rareza comunitaria.   | HU-10       | Lógica de Negocio | Web y Mobile     |
+| RF-10.2          | Sistema de paquetes aleatorios de cartas      | El sistema debe gestionar una rutina de reposición periódica y gratuita de paquetes para incentivar la progresión del jugador.                   | HU-10       | Lógica de Negocio | Backend          |
 | RF-11.1          | Módulo de Juego       | El sistema debe proveer una interfaz táctica para seleccionar cartas del mazo/álbum e iniciar emparejamientos.                                   | HU-11       | Lógica de Negocio | Web y Mobile     |
 | RF-11.2          | Módulo de Juego       | El sistema debe procesar y resolver de manera automatizada los enfrentamientos (Battle/TCG) aplicando las estadísticas de las cartas.            | HU-11       | Lógica de Negocio | Web y Mobile     |
 | RF-12.1          | Administración        | El sistema debe contar con herramientas de moderación para dar de baja obras o comentarios que violen los términos de uso.| HU-12       | ABM               | Web (Backoffice) |
 | RF-12.2          | Seguridad             | El sistema debe incorporar mecanismos de protección perimetral y mitigación contra ataques automatizados de bots en las votaciones.| HU-12       | Lógica de Negocio | Backend |
+
+### Requerimientos no funcionales
+
+| ID     | Requerimiento                                                                                |
+| ------ | -------------------------------------------------------------------------------------------- |
+| RNF-01 | El sistema debe garantizar autenticación segura mediante manejo de sesiones y OAuth.         |
+| RNF-02 | Las imágenes deben almacenarse optimizadas para reducir tiempos de carga.                    |
+| RNF-03 | La plataforma debe soportar crecimiento de usuarios sin modificar la arquitectura principal. |
+| RNF-04 | El sistema debe proteger votaciones contra bots o abuso automatizado.                        |
 
 
 ## Milestones del proyecto
@@ -172,7 +181,7 @@ Este Milestone establece la base sobre la cual funcionan las demás funcionalida
 - HU-01: Como usuario quiero registrarme para crear una cuenta.
 - HU-02: Como usuario quiero iniciar sesión para acceder al sistema.
 - HU-03: Como artista quiero crear mi perfil público.
-- HU-07: Como sistema procesar valoraciones de la comunidad para generar atributos de cartas coleccionables.
+- HU-04: Como artista quiero cargar una obra digital.
 
 ### Milestone 2: Sistema artístico y participación comunitaria
 
@@ -182,9 +191,9 @@ Este milestone se enfoca en las funcionalidades principales que involucran compa
 
 **Historias**:
 
-- HU-04: Como artista quiero cargar una obra digital.
 - HU-05: Como usuario quiero explorar una galería.
 - HU-06: Como usuario quiero evaluar obras con estrellas y emociones.
+- HU-07: Como sistema procesar valoraciones de la comunidad para generar atributos de cartas coleccionables.
 - HU-012: Como administrador quiero gestionar el contenido de la plataforma para mantener la calidad y seguridad del sistema
 
 
@@ -210,16 +219,18 @@ Sumando los puntos de historia asignados a cada HU, el mapa de esfuerzo queda di
 - HU-01: Registro de usuario  3 SP
 - HU-02: Inicio de sesión 3 SP
 - HU-03: Perfil público de artista 5 SP
-- HU-07: Motor de conversión (Aislado con datos sintéticos)  13 SP
-- **Total Milestone 1: 24 SP**
+- HU-04: Carga de obra y Lore  5 SP
+
+- **Total Milestone 1: 16 SP**
 
 ### Milestone 2: Sistema artístico y participación comunitaria
 
-- HU-04: Carga de obra y Lore  5 SP
+
 - HU-05: Explorador de galería  5 SP
 - HU-06: Evaluación con estrellas y emociones  8 SP
+- HU-07: Motor de conversión (Aislado con datos sintéticos)  13 SP
 - HU-12: Gestión y moderación del administrador  5 SP
-- **Total Milestone 2: 23 SP**
+- **Total Milestone 2: 31 SP**
 
 ### Milestone 3: Gamificación y coleccionismo
 
@@ -234,7 +245,7 @@ Sumando los puntos de historia asignados a cada HU, el mapa de esfuerzo queda di
 **Gran total: 78 SP**
 
 Los componentes con mayor estimación son el motor de conversión y el módulo de juego porque contienen lógica de negocio propia, cálculos dinámicos e interacción entre múltiples entidades. La publicación y gestión básica poseen menor complejidad porque corresponden principalmente a operaciones CRUD.
-Suponiendo que se trabaje a una velocidad promedio de 10-12 SP por sprint, se estima que los primeros dos Milestones tardaran 2 sprints (alrededor  de 4 semanas), mientras que el último milestone (3) tardará 3 sprints (alrededor de 6 semanas)
+Suponiendo que se trabaje a una velocidad promedio de 10-12 SP por sprint, se estima que el primer Milestones tardará 1 a 2 sprints (alrededor de 2-4 semanas), mientras que los últimos milestone (2 y 3) tardarán 3 a 4 sprints (alrededor de 6-8 semanas)
 
 ## Ajuste a la metodología de trabajo
 **Situación propuesta: Ajuste de metodología por aumento de complejidad en el motor de conversión de cartas**
@@ -246,7 +257,7 @@ Debido a esta situación, el equipo decide realizar un ajuste en la metodología
 En esta situación se detectan los siguientes riesgos:
 | Riesgo                                                                                  | Probabilidad | Impacto | Consecuencia                                                                          |
 | --------------------------------------------------------------------------------------- | ------------ | ------- | ------------------------------------------------------------------------------------- |
-| La complejidad del motor de generación de cartas supera la estimación inicial.          | Alta         | Alta    | Retraso en la entrega del milestone 1 y dificultad para completar el módulo de juego. |
+| La complejidad del motor de generación de cartas supera la estimación inicial.          | Alta         | Alta    | Retraso en la entrega del milestone 2 y dificultad para completar el módulo de juego. |
 | Las reglas de generación producen cartas desbalanceadas.                                | Media        | Alta    | La experiencia de juego pierde calidad y requiere modificaciones posteriores.         |
 | Falta de claridad sobre cómo convertir emociones y puntuaciones en atributos numéricos. | Media        | Media   | Aumento de retrabajo y brainstorming/iteraciones sobre la implementación.|
 
