@@ -235,3 +235,61 @@ Sumando los puntos de historia asignados a cada HU, el mapa de esfuerzo queda di
 
 Los componentes con mayor estimación son el motor de conversión y el módulo de juego porque contienen lógica de negocio propia, cálculos dinámicos e interacción entre múltiples entidades. La publicación y gestión básica poseen menor complejidad porque corresponden principalmente a operaciones CRUD.
 Suponiendo que se trabaje a una velocidad promedio de 10-12 SP por sprint, se estima que los primeros dos Milestones tardaran 2 sprints (alrededor  de 4 semanas), mientras que el último milestone (3) tardará 3 sprints (alrededor de 6 semanas)
+
+## Ajuste a la metodología de trabajo
+**Situación propuesta: Ajuste de metodología por aumento de complejidad en el motor de conversión de cartas**
+Durante el desarrollo de Pandora se identifica que la funcionalidad del motor de conversión de cartas, encargada de transformar las valoraciones de la comunidad en atributos jugables (ataque, defensa, vida, rareza y características especiales), presenta una complejidad mayor a la estimada inicialmente. La lógica requiere definir reglas de cálculo, balancear estadísticas y realizar múltiples pruebas para evitar que las cartas generadas sean desbalanceadas.
+
+Debido a esta situación, el equipo decide realizar un ajuste en la metodología de trabajo incorporando una etapa más fuerte de investigación, validación y prototipado dentro de los sprints.
+
+### Riesgos
+En esta situación se detectan los siguientes riesgos:
+| Riesgo                                                                                  | Probabilidad | Impacto | Consecuencia                                                                          |
+| --------------------------------------------------------------------------------------- | ------------ | ------- | ------------------------------------------------------------------------------------- |
+| La complejidad del motor de generación de cartas supera la estimación inicial.          | Alta         | Alta    | Retraso en la entrega del milestone 1 y dificultad para completar el módulo de juego. |
+| Las reglas de generación producen cartas desbalanceadas.                                | Media        | Alta    | La experiencia de juego pierde calidad y requiere modificaciones posteriores.         |
+| Falta de claridad sobre cómo convertir emociones y puntuaciones en atributos numéricos. | Media        | Media   | Aumento de retrabajo y brainstorming/iteraciones sobre la implementación.|
+
+### Ajuste propuesto en la metodología
+Inicialmente el proyecto utiliza Scrum con sprints orientados a completar historias de usuario. Ante el riesgo detectado, se propone adaptar la metodología incorporando una fase de **Sprint de exploración técnica (Spike)** antes de desarrollar completamente la funcionalidad.
+
+#### 1. Creación de historias técnicas de investigación
+
+En lugar de implementar directamente el motor de conversión, se agregan tareas específicas:
+
+- Investigar modelos posibles de cálculo de estadísticas.
+- Crear prototipos de generación de cartas.
+- Definir reglas de rareza.
+- Validar resultados con datos simulados.
+
+Ejemplo de historia técnica:
+
+Como equipo de desarrollo queremos investigar diferentes modelos de conversión para definir una estrategia viable antes de implementar el motor definitivo.
+
+#### 2. División de una historia grande en historias menores
+La historia original:
+
+    Como sistema quiero transformar evaluaciones de usuarios en cartas jugables.
+
+| Nueva historia                                                        | Objetivo                             |
+| --------------------------------------------------------------------- | ------------------------------------ |
+| Como sistema quiero almacenar las evaluaciones recibidas de una obra. | Preparar datos de entrada.           |
+| Como sistema quiero calcular estadísticas básicas según puntuaciones. | Crear primera versión del algoritmo. |
+| Como sistema quiero asignar rareza según criterios definidos.         | Implementar clasificación.           |
+| Como sistema quiero generar una carta completa.                       | Integrar todos los componentes.      |
+
+#### 3. Mayor uso de Kanban dentro del sprint
+
+Se aumenta el uso del tablero Kanban para controlar tareas técnicas:
+
+- Investigación.
+- Desarrollo.
+- Pruebas.
+- Ajustes de balance.
+
+Esto permite visualizar bloqueos rápidamente y evitar que una tarea compleja detenga todo el avance del equipo.
+
+### Conclusiones de este cambio
+El cambio no implica abandonar Scrum, sino adaptarlo a la realidad del proyecto. La metodología ágil permite modificar la planificación cuando aparecen nuevos riesgos o información que no estaba disponible al inicio.
+En este caso, continuar con la planificación original podría generar acumulación de tareas pendientes y retrasar otros módulos dependientes. Al dividir la funcionalidad y validar primero la lógica del sistema, se reduce la incertidumbre y se mejora la calidad del producto final.
+Este ajuste también mantiene alineado el desarrollo con la característica principal de Pandora: transformar la percepción colectiva de los usuarios en elementos jugables, una funcionalidad innovadora que requiere pruebas y refinamiento antes de ser implementada completamente.
